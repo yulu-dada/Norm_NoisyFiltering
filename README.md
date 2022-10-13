@@ -1,11 +1,13 @@
 # Our code is implemented on Fairseq.
 
+This is for our paper "Norm-based Noisy Corpora Filtering and Refurbishing in Neural Machine Translation" published at EMNLP2022.
+
 ## env: Fairseq-0.9, Pytorch-1.6
 ## code structure:
 - mycode : Noisy Corpora Filtering
 - mycode-kd: Noisy Label Refurbishing
 
-## Step 1: Preprocess the data using rule-based filtering
+## Step 1: Preprocess the data using rule-based filtering (please refer to appendix C)
 
 ## Step 2: Train
 sent-threshold: k in equation(9)
@@ -34,8 +36,6 @@ nohup fairseq-train $data_bin \
 
 The following setting is very important to ensure the stability of our proposed metric!!!
 ```--encoder-normalize-before --decoder-normalize-before```
-
-The setting of hyperparameter k is in `mycriterion.py`
 
 ## Step 3: Inference
 ```python
